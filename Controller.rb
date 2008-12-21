@@ -1,5 +1,8 @@
 require 'osx/cocoa'
-
+require 'rubygems'
+require 'jcode'
+$KCODE='u'
+require 'activesupport'
 class Controller < OSX::NSObject
   attr_writer :results_table_view, :search_field
   
@@ -7,16 +10,8 @@ class Controller < OSX::NSObject
 	@results = []
 	@results_table_view.dataSource = self
 	@path = OSX::NSBundle.mainBundle.resourcePath.fileSystemRepresentation
-=begin	
-	@dict ||= File.readlines(@path+"/cedict_ts.u8")[1..-1].collect do |x|
-	  r= Result.new
-	  data= /(\S+) (\S+) \[(.+)\] (.+)/.match(x)
-	  r.chinese =  data[1]
-	  r.english =  data[4]
-	  r.pinyin = data[3]
-	  r.simplified = data[2]
-	end
-=end
+	#  grep kCantonese Unihan.txt > unihancantonese.txt 
+	@cantonese = File.readlines @path+"/unihancantonese.txt"
   end
 
   def dict
@@ -35,7 +30,6 @@ class Controller < OSX::NSObject
   
   def search(sender)
 	q = @search_field.stringValue
-	#sender.window.Title=title if frame == sender.mainFrame
 	puts "query: #{q}"
 	matches = q.blank? ? [] : dict.select{|x| x.match /#{q}/}
 	@results = []
@@ -51,6 +45,9 @@ class Controller < OSX::NSObject
 	  r.english =  data[4]
 	  r.pinyin = data[3]
 	  r.simplified = data[2]
+	  hex = "U+"+("%x" % (data[1].unpack('U*').to_s.to_i)).upcase
+	  jyutpin = @cantonese.detect{|x| x.match /#{Regexp.escape(hex)}/}
+	  r.jyutpin = jyutpin.strip.split[2..-1].to_s if jyutpin
 	  @results << r
 	end
 	@results_table_view.reloadData

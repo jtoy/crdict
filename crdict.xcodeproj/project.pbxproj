@@ -12,6 +12,7 @@
 		4DDCA70A0ACC9A6100E082CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		4DDCA70C0ACC9A6100E082CE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		4DDCA70D0ACC9A6100E082CE /* RubyCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8F5E24E03AEB6EC03A81C6F /* RubyCocoa.framework */; };
+		5F021B910EFE5C28003AB07C /* unihancantonese.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F021B900EFE5C28003AB07C /* unihancantonese.txt */; };
 		5F7976E40EE36E4C0069256D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F7976E20EE36E4C0069256D /* MainMenu.xib */; };
 		5FA8AC750EE31C4300F4544A /* Controller.rb in Resources */ = {isa = PBXBuildFile; fileRef = 5FA8AC740EE31C4300F4544A /* Controller.rb */; };
 		5FA8AC790EE31F4D00F4544A /* cedict_ts.u8 in Resources */ = {isa = PBXBuildFile; fileRef = 5FA8AC780EE31F4D00F4544A /* cedict_ts.u8 */; };
@@ -25,6 +26,7 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		4DDCA7110ACC9A6100E082CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DDCA7120ACC9A6100E082CE /* crdict.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crdict.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F021B900EFE5C28003AB07C /* unihancantonese.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = unihancantonese.txt; sourceTree = "<group>"; };
 		5F7976E30EE36E4C0069256D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5FA8AC740EE31C4300F4544A /* Controller.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Controller.rb; sourceTree = "<group>"; };
 		5FA8AC780EE31F4D00F4544A /* cedict_ts.u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cedict_ts.u8; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5F021B900EFE5C28003AB07C /* unihancantonese.txt */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				5FA8AC740EE31C4300F4544A /* Controller.rb */,
 				5FA8AC780EE31F4D00F4544A /* cedict_ts.u8 */,
@@ -179,6 +182,7 @@
 				5FA8AC750EE31C4300F4544A /* Controller.rb in Resources */,
 				5FA8AC790EE31F4D00F4544A /* cedict_ts.u8 in Resources */,
 				5F7976E40EE36E4C0069256D /* MainMenu.xib in Resources */,
+				5F021B910EFE5C28003AB07C /* unihancantonese.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
